@@ -37,14 +37,14 @@
   ],
   "performances": [
     {
-      "_id": "perf_1794734407907_n89lx",
-      "createdAt": "2026-11-15T09:20:07.907Z",
-      "updatedAt": "2026-11-15T09:55:05.492Z",
+      "_id": "perf_1794757409043_1egjf",
+      "createdAt": "2026-11-15T15:43:29.043Z",
+      "updatedAt": "2026-11-15T15:49:23.571Z",
       "artistId": "user_1794723614231_wi0a3",
       "artistName": "jhv jhkjesc",
-      "title": "chhath",
-      "slug": "chhath-7872",
-      "description": "Multimodal performance with synchronized accessibility layers.",
+      "title": "Kathak",
+      "slug": "kathak-9023",
+      "description": "Dance",
       "category": "Dance",
       "originalLanguage": "Bengali",
       "supportedLanguages": [
@@ -52,11 +52,13 @@
         "Hindi",
         "English"
       ],
-      "videoUrl": "/uploads/1794734407856-312783386.mp4",
+      "videoUrl": "/uploads/1794757409014-668787135.mp4",
       "thumbnailUrl": "",
-      "duration": 17.9,
+      "duration": 20.6,
       "tags": [
-        "video"
+        "Kathak",
+        "Mudra",
+        "Classical"
       ],
       "status": "published",
       "processingProgress": 100,
@@ -69,14 +71,27 @@
           "timestamp": 5
         }
       ],
-      "qrCodeDataUrl": "data:image/png;base64,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",
-      "publishedAt": "2026-11-15T09:55:05.492Z"
+      "qrCodeDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAAAklEQVR4AewaftIAAAyiSURBVO3BwZEksLElsKeMuemgs2wgnaMldI60R7sm8Gd0RalHAP7xz3/9+z8BgP+jCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQMOffMgaJ7zbd+ab1jh5te/MJ6xx8mLfmU9Y4+S32Hfm29Y4ebXvzE9b44R3+878tAoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoOFP/gvsO/M3WuPkt9h35rdY4+Q32Xfmp61x8mrfmVdrnLzad+bVGicv9p35hH1n/kZrnHxTBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQ8Ce/zBon37TvzLetcfLT9p15tcbJq31nftq+M6/WOPm2NU5+2r4zn7DvzP+6NU6+ad+Z36ICAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoKECAA0VAGj4E/5a+868WuPk1b4zr9Y4ebXvzIs1Tr5t35lvWuMEvq0CAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoKECAA1/wl9rjZNX+858wr4zr9Y4ebHvzKs1Tl7tO/NqjZNP2Hfmxb4zv8kaJ/x9KgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhj/5Zfad4c2+M5+wxsmrfWd+2honn7DGySfsO/PT1jh5te/MqzVOXu078zfad4Y3FQBoqABAQwUAGioA0FABgIYKADRUAKChAgANFQBoqABAw5/8F1jjhO9a4+TVvjOv1jh5te/MizVOXu0782qNk1f7zrxa4+TVvjP8vDVO+HkVAGioAEBDBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEDDP/75r3//J/wqa5z8jfad+WlrnLzad+ZvtMbJJ+w782qNkxf7zvB7VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADX/yIWucvNp35tUaJ3+jfWde7TvzYo2TT9h35tUaJ6/WOPkt1jh5te/MT1vj5NW+M6/WOPkt1jj5G+0781tUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKDhT/iYfWderXHyW6xx8mrfmd9ijZNX+868WuPkp+0782qNk09Y4+TVvjPftO/MJ6xx8k1rnLzad+anVQCgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADX/yIfvOvFrj5NW+M9+0xsmrNU5e7Tvz09Y4ebXvzKs1Tn6LNU5+k31nXqxx8gn7znzCGicv9p35tjVOXu0782KNk1drnLzad+abKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhj/5L7DvzKs1Tl7tO/NN+858whon/8vWOPmEfWc+Yd+ZV2ucfNMaJ6/2nXm178yLNU5+kzVOvmmNk1f7zvy0CgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACg4R///Ne//5MPWOPkE/ad+aY1Tj5h35lXa5y82Hfm29Y4ebXvzN9ojZNX+878tDVOXu0782qNk1f7znzTGifftO/MqzVOPmHfmZ9WAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0/MmH7DvzW6xx8mrfmU9Y4+S3WOPkm9Y4+bZ9Z17tO/PT1jj5hDVOPmGNkxf7zrxa4+TVvjP8vAoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANPzjn//693/yl1rj5LfYd+bVGic/bd+ZT1jj5NW+M//r1jh5se/Mb7LGyTftO/MJa5y82Hfm1Ronr/ad+aYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKDhTz5kjZNP2Hfm1b4zL9Y4+YR9Z16tcfJbrHHyat+Z32KNk1f7znzTGie/yb4z37TGyat9Z37aGiev9p35LSoA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIY/+S+w78wnrHHyYt+ZT1jj5NW+M6/WOPkt1jh5te/MizVOXu0782rfmVdrnLzad+ab9p15tcbJq31nXq1x8tP2nfmENU5e7TvzTWucvNp35qdVAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANf/Ih+858whonv8W+M6/WOPlp+858wr4zn7DGyYt9Zz5hjZPfYt+Zb1vj5NW+Mz9tjZNP2Hfm1RonP23fmd+iAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANFQBo+JMPWePkf90aJ6/2nXm1xsk3rXHyat+ZV/vO/LQ1Tl7tO/NqjZNP2HfmxRonr/ad+YR9Z37aGiefsO/MqzVOXu0782KNk0/Yd+abKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhn/881///k++bI2TV/vO/LQ1Tl7tO/M3WuPkb7TvzCescfIJ+878jdY4+Wn7znzCGie/xb4z31QBgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIY/+S+w78wnrHHyTWucvNp35tUaJ9+078yrNU5e7Tvz09Y4+YR9Z75pjZNv23fmp+078wlrnHzTvjOv1jj5LSoA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIY/+ZA1Tr5t35mftsbJq31nvmnfmVdrnHzbGifftO/MqzVOPmHfmRf7zrxa4+TVvjPftMbJq31nXu07801rnLzad+bVGiev9p35aRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQMM//vmvf/8nH7DGyat9Zz5hjZO/0b4zL9Y4+YR9Zz5hjZPfYt+ZV2ucvNp35sUaJ7/JvjMv1jj5tn1nXq1x8k37znxTBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQ8Cd/sX1nXqxx8mrfmd9i35lPWOPk1b4zP23fmVdrnLzad+a32Hfm1Ronr/adebXGyas1Tn6LNU6+ad+Z36ICAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoKECAA0VAGj4xz//9e//5APWOHm178zfaI2TV/vO/LQ1Tl7tO/MJa5y82nfmp61x8m37zvy0NU5e7TvzbWuc/C/bd+YT1jh5te/MT6sAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQMM//vmvf/8n/CprnHzTvjN/ozVOXu078wlrnLzYd+bVGiefsO/MqzVOXuw7821rnLzad+bFGiev9p15tcbJq31nfloFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANDwJx+yxgnv9p15te/MizVOXu078wlrnLzad+anrXHybWucvNp35sUaJ5+w78yrNU6+aY2TV/vO/BZrnLzad+abKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhj/5L7DvzN9ojZNPWOPkxb4zn7DGyat9Z16tcfJi35nfZN+Z32KNk99i35n/dWucvNp35qdVAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANf/LLrHHyTfvO/K/bd+bVGic/bY2TT9h35hPWOHm178yLfWderXHyat+ZT1jj5MUaJ7/JGicv9p35G1UAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoKECAA1/wl9rjZNX+868WuPkE/ad+WlrnLxa4+TVvjOv9p35aWucvNp35tUaJ5+w78yLNU5e7Tvzao2Tb1rj5NW+M6/WOHm178xPqwBAQwUAGioA0FABgIYKADRUAKChAgANFQBoqABAw5/A/7fGySfsO/NqjZMX+8682nfm29Y4+Wn7znzCvjOfsMbJi31nXq1x8gn7zvy0NU4+Yd+Zb6oAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABr+5JfZd+Z/3b4zv8UaJ6/2nfmmNU5e7TvzTWucfMK+M6/WOPmmfWderXHyao0T3lQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoKECAA1/8l9gjRPerXHy0/ad+bY1Tl7sO/MJ+868WuPk1b4zr9Y4+Wn7znzCvjOv1jj5G+0789PWOHm178w3VQCgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADf/457/+/Z8AwP9RBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANPw/d9Hx/KzENC8AAAAASUVORK5CYII=",
+      "publishedAt": "2026-11-15T15:49:23.571Z"
     }
   ],
   "timelines": [
     {
-      "_id": "tl_1794734407907_icir7",
-      "performanceId": "perf_1794734407907_n89lx",
+      "_id": "tl_1794736468054_hcqux",
+      "performanceId": "67362a1b9f1d2c3e4a5b6c81",
+      "version": 1,
+      "captions": [],
+      "movementEvents": [],
+      "sceneEvents": [],
+      "soundEvents": [],
+      "hapticCues": [],
+      "accessibilityDescriptions": [],
+      "isApproved": false,
+      "updatedAt": "2026-11-15T09:54:28.054Z"
+    },
+    {
+      "_id": "tl_1794757409045_xmsrb",
+      "performanceId": "perf_1794757409043_1egjf",
       "version": 2,
       "captions": [
         {
@@ -331,9 +346,9 @@
           "duration": 5,
           "style": "poetic",
           "text": {
-            "english": "In sacred stillness, the dancer stands centered, cupping dawn’s golden light in a devotional Samputa mudra. As the flute's breath mingles with the swelling pulse of Teental, the feet awaken the earth with accelerating Tatkar. Ghungroos cascade like a river of bells, sweeping into triple chakkars that dissolve the body into a radiant whirlwind of prayer.",
-            "bengali": "পবিত্র নিস্তব্ধতায় স্থির দাঁড়িয়ে নৃত্যশিল্পী; সম্পুট মুদ্রায় ধরা অঞ্জলি যেন ভোরের প্রথম কিরণকে নিবেদন করছে। বাঁশির সুর আর তিনতালের ছন্দে দ্রুতগামী তৎকারের পদধ্বনি ধরিত্রীকে জাগিয়ে তোলে; ঘুঙুরের ক্রমশঃ চড়ে যাওয়া নিক্বণ তিন পাকের ঘূর্ণনে এক অপূর্ব আলোকময় ভক্তিতে বিলীন হয়ে যায়।",
-            "hindi": "परम शांति के केंद्र में स्थित नर्तक, सम्पुट मुद्रा में बंधी अंजलि से मानो प्रभात की स्वर्णिम किरणों का अर्घ्य दे रहे हैं। बांसुरी के आलाप और तीनताल के सम्मिश्रण से तत्कार के कदमों में गति भरती है; घुंघरुओं की तीव्र होती झंकार तीन द्रुत चक्करों में बदलकर नर्तक को प्रकाश और प्रार्थना के एक दिव्य भंवर में लीन कर देती है।"
+            "english": "Rooted in tranquil stillness, hands cupped in reverent Samputa mudra like an unopened lotus, the dancer breathes with the plaintive flute. As the Tabla kindles the heartbeat of Teental, her feet awaken into a cascading Tatkar—ankle bells chiming like silver rain. Suddenly, she dissolves into a dazzling tempest of triple Chakkars, her swirling silhouette blurring into a luminous vortex before returning to breathless poise.",
+            "bengali": "প্রশান্ত স্তব্ধতায় দাঁড়িয়ে নৃত্যশিল্পী, বক্ষে অঞ্জলিবদ্ধ সম্পুট মুদ্রা যেন এক সমর্পিত কমলকলি। বাঁশির সুরের আবহে ত্রিতালের স্পন্দনে জেগে ওঠে চরণ—তৎকারের ক্রমবর্ধিত ঝংকারে শত ঘুঙুর ছড়িয়ে দেয় রূপোলি বৃষ্টি। পরক্ষণেই ত্রিবিধ চক্করের উন্মাতাল ঘূর্ণনে উড়ে যায় বসন, আলো আর ছন্দের মোহময় ঘূর্ণিবায়ু মিলিয়ে গিয়ে ফিরে আসে এক অনন্ত, স্নিগ্ধ সমে।",
+            "hindi": "गहन स्थिरता में समर्पित, वक्ष पर संपुट मुद्रा साधे नर्तकी जैसे भक्ति में खिली एक पावन कली। बाँसुरी के आलाप संग जैसे ही तीनताल की थाप गति पकड़ती है, तत्कार की लयबद्ध चोट से घुंघरुओं का रजत नाद गूँज उठता है। एकाएक, तिहरे चक्करों के सम्मोहक भंवर में लहराता उनका रूप गति और लय का बवंडर बन जाता है, और फिर ठहर जाता है एक विस्मयकारी, शांत सम पर।"
           },
           "status": "artist_approved"
         },
@@ -375,21 +390,8 @@
         }
       ],
       "isApproved": true,
-      "updatedAt": "2026-11-15T09:20:40.925Z",
-      "approvedAt": "2026-11-15T09:47:36.582Z"
-    },
-    {
-      "_id": "tl_1794736468054_hcqux",
-      "performanceId": "67362a1b9f1d2c3e4a5b6c81",
-      "version": 1,
-      "captions": [],
-      "movementEvents": [],
-      "sceneEvents": [],
-      "soundEvents": [],
-      "hapticCues": [],
-      "accessibilityDescriptions": [],
-      "isApproved": false,
-      "updatedAt": "2026-11-15T09:54:28.054Z"
+      "updatedAt": "2026-11-15T15:47:47.737Z",
+      "approvedAt": "2026-11-15T15:49:16.447Z"
     }
   ],
   "analytics": [
@@ -408,6 +410,22 @@
         "english": 6
       },
       "lastAccessed": "2026-11-15T09:56:59.255Z"
+    },
+    {
+      "_id": "ana_1794757096338",
+      "performanceId": "perf_1794756736854_99gh2",
+      "slug": "kathak-6816",
+      "totalViews": 0,
+      "qrScans": 0,
+      "visualModeUses": 0,
+      "audioModeUses": 0,
+      "hapticModeUses": 0,
+      "languageSelections": {
+        "bengali": 0,
+        "hindi": 0,
+        "english": 0
+      },
+      "lastAccessed": "2026-11-15T15:38:16.338Z"
     }
   ],
   "feedbacks": []

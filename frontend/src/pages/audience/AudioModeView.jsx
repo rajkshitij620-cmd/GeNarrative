@@ -14,6 +14,7 @@ import {
   Sliders
 } from 'lucide-react';
 import ModeBadge from '../../components/common/ModeBadge';
+import LanguageDropdown from '../../components/common/LanguageDropdown';
 
 export default function AudioModeView() {
   const { slug } = useParams();
@@ -108,22 +109,14 @@ export default function AudioModeView() {
         <ModeBadge mode="audio" size="lg" />
 
         {/* Language selector */}
-        <div className="flex items-center gap-1 text-[11px]">
-          {['bengali', 'hindi', 'english'].map(l => (
-            <button
-              key={l}
-              onClick={() => {
-                setLanguage(l);
-                spokenTracker.current = {}; // reset tracker
-              }}
-              className={`px-2 py-1 rounded capitalize font-medium ${
-                language === l ? 'bg-emerald-600 text-white font-bold' : 'bg-surface text-gray-400'
-              }`}
-            >
-              {l === 'bengali' ? 'বাংলা' : l === 'hindi' ? 'हिन्दी' : 'EN'}
-            </button>
-          ))}
-        </div>
+        <LanguageDropdown
+          language={language}
+          setLanguage={(lang) => {
+            setLanguage(lang);
+            spokenTracker.current = {}; // reset tracker on language change
+          }}
+          accentClass="bg-emerald-700/40 text-emerald-200"
+        />
       </div>
 
       {/* Video & Synchronized Voiceover Display */}

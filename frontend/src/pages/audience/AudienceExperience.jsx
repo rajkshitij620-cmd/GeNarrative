@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import api from '../../services/api';
 import { useAccessibility } from '../../context/AccessibilityContext';
@@ -17,17 +17,21 @@ import {
   Share2,
   Smartphone,
   Bookmark,
-  UserCheck
+  UserCheck,
+  ChevronDown
 } from 'lucide-react';
 import ModeBadge from '../../components/common/ModeBadge';
+import { INDIAN_OFFICIAL_LANGUAGES } from '../../constants/languages';
 
 export default function AudienceExperience() {
   const { slug } = useParams();
   const { language, setLanguage } = useAccessibility();
   const { user, updateUser } = useAuth();
+  const langDropdownRef = useRef(null);
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [langOpen, setLangOpen] = useState(false);
   const [error, setError] = useState('');
   const [isSaved, setIsSaved] = useState(false);
   const [saveLoading, setSaveLoading] = useState(false);
@@ -152,26 +156,46 @@ export default function AudienceExperience() {
           <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary-600/30 text-primary-300 border border-primary-500/40">
             RASA CUE • Audience Portal
           </span>
-          {/* Language Switcher */}
-          <div className="flex items-center gap-1 text-xs">
-            <Globe2 className="w-3.5 h-3.5 text-gray-400 mr-1" />
-            {[
-              { code: 'bengali', label: 'বাংলা' },
-              { code: 'hindi', label: 'हिन्दी' },
-              { code: 'english', label: 'EN' }
-            ].map(l => (
-              <button
-                key={l.code}
-                onClick={() => setLanguage(l.code)}
-                className={`px-2 py-0.5 rounded text-[11px] font-medium transition-all ${
-                  language === l.code
-                    ? 'bg-primary-600 text-white font-bold'
-                    : 'bg-surface text-gray-400 hover:text-white'
-                }`}
-              >
-                {l.label}
-              </button>
-            ))}
+          {/* Language Switcher — Dropdown */}
+          <div className="relative" ref={langDropdownRef}>
+            <button
+              onClick={() => setLangOpen(o => !o)}
+              onBlur={() => setTimeout(() => setLangOpen(false), 150)}
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface border border-gray-700 hover:border-primary-500 text-xs font-medium text-gray-200 hover:text-white transition-all"
+            >
+              <Globe2 className="w-3.5 h-3.5 text-primary-400" />
+              <span>
+                {INDIAN_OFFICIAL_LANGUAGES.find(l => l.value.toLowerCase() === language)?.label
+                  || INDIAN_OFFICIAL_LANGUAGES.find(l => l.code === language)?.label
+                  || 'English'}
+              </span>
+              <ChevronDown className={`w-3 h-3 text-gray-400 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {langOpen && (
+              <div className="absolute right-0 top-full mt-1 z-50 w-56 max-h-72 overflow-y-auto rounded-xl bg-gray-900 border border-gray-700 shadow-2xl py-1">
+                {INDIAN_OFFICIAL_LANGUAGES.map(l => {
+                  const isSelected = language === l.value.toLowerCase() || language === l.code;
+                  return (
+                    <button
+                      key={l.code}
+                      onMouseDown={() => {
+                        setLanguage(l.value.toLowerCase());
+                        setLangOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-1.5 text-xs transition-all flex items-center justify-between gap-2 ${
+                        isSelected
+                          ? 'bg-primary-600/30 text-primary-200 font-semibold'
+                          : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+                      }`}
+                    >
+                      <span>{l.label}</span>
+                      {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-primary-400 shrink-0" />}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
 
