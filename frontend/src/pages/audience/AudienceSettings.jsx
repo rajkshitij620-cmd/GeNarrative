@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import api from '../../services/api';
 import { Settings, Save, CheckCircle2, ArrowLeft, Eye, Headphones, Activity, Sparkles } from 'lucide-react';
+import { INDIAN_OFFICIAL_LANGUAGES } from '../../constants/languages';
 
 export default function AudienceSettings() {
   const { user, updateUser } = useAuth();
@@ -95,9 +96,11 @@ export default function AudienceSettings() {
               onChange={(e) => setPreferredLanguage(e.target.value)}
               className="w-full px-4 py-2.5 rounded-xl bg-[#0D0F17] border border-white/[0.08] text-sm text-white focus:border-cyan-500 focus:outline-none"
             >
-              <option value="Bengali">Bengali (বাংলা) - Primary Traditional</option>
-              <option value="Hindi">Hindi (हिन्दी)</option>
-              <option value="English">English</option>
+              {INDIAN_OFFICIAL_LANGUAGES.map((lang) => (
+                <option key={lang.code} value={lang.value}>
+                  {lang.label}
+                </option>
+              ))}
             </select>
             <span className="text-[11px] text-gray-500 mt-1 block">
               When scanning a QR code, the player will automatically load subtitles and voiceover in this language.

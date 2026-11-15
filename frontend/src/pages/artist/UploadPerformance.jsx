@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   Tag
 } from 'lucide-react';
+import { INDIAN_OFFICIAL_LANGUAGES } from '../../constants/languages';
 
 export default function UploadPerformance() {
   const navigate = useNavigate();
@@ -214,9 +215,11 @@ export default function UploadPerformance() {
                 onChange={(e) => setOriginalLanguage(e.target.value)}
                 className="w-full px-4 py-2.5 rounded-xl bg-surface border border-gray-700 text-sm text-white focus:border-primary-500 focus:outline-none"
               >
-                <option value="Bengali">Bengali (বাংলা)</option>
-                <option value="Hindi">Hindi (हिन्दी)</option>
-                <option value="English">English</option>
+                {INDIAN_OFFICIAL_LANGUAGES.map((lang) => (
+                  <option key={lang.code} value={lang.value}>
+                    {lang.label}
+                  </option>
+                ))}
               </select>
             </div>
 

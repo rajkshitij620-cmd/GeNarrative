@@ -1,0 +1,26 @@
+// Official Languages of India (22 Eighth Schedule Languages) + English
+export const INDIAN_OFFICIAL_LANGUAGES = [
+  { code: 'en', value: 'English', label: 'English' },
+  { code: 'hi', value: 'Hindi', label: 'Hindi (हिन्दी)' },
+  { code: 'bn', value: 'Bengali', label: 'Bengali (বাংলা)' },
+  { code: 'as', value: 'Assamese', label: 'Assamese (অসমীয়া)' },
+  { code: 'brx', value: 'Bodo', label: 'Bodo (बर\')' },
+  { code: 'doi', value: 'Dogri', label: 'Dogri (डोगरी)' },
+  { code: 'gu', value: 'Gujarati', label: 'Gujarati (ગુજરાતી)' },
+  { code: 'kn', value: 'Kannada', label: 'Kannada (ಕನ್ನಡ)' },
+  { code: 'ks', value: 'Kashmiri', label: 'Kashmiri (कॉशुर / کٲشُر)' },
+  { code: 'kok', value: 'Konkani', label: 'Konkani (कोंकणी)' },
+  { code: 'mai', value: 'Maithili', label: 'Maithili (मैथिली)' },
+  { code: 'ml', value: 'Malayalam', label: 'Malayalam (മലയാളം)' },
+  { code: 'mni', value: 'Manipuri', label: 'Manipuri (মৈতৈলোন্)' },
+  { code: 'mr', value: 'Marathi', label: 'Marathi (मराठी)' },
+  { code: 'ne', value: 'Nepali', label: 'Nepali (नेपाली)' },
+  { code: 'or', value: 'Odia', label: 'Odia (ଓଡ଼ିଆ)' },
+  { code: 'pa', value: 'Punjabi', label: 'Punjabi (ਪੰਜਾਬੀ)' },
+  { code: 'sa', value: 'Sanskrit', label: 'Sanskrit (संस्कृतम्)' },
+  { code: 'sat', value: 'Santali', label: 'Santali (संताली / ᱥᱟᱱᱛᱟᱲᱤ)' },
+  { code: 'sd', value: 'Sindhi', label: 'Sindhi (सिन्धी / سنڌي)' },
+  { code: 'ta', value: 'Tamil', label: 'Tamil (தமிழ்)' },
+  { code: 'te', value: 'Telugu', label: 'Telugu (తెలుగు)' },
+  { code: 'ur', value: 'Urdu', label: 'Urdu (اردو)' }
+];
