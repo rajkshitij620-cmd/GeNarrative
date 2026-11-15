@@ -110,9 +110,33 @@ export default function LoginPage() {
         </div>
 
         {/* Login Form */}
-        <div className="glass-panel p-8 rounded-3xl border border-white/[0.08] shadow-2xl">
+        <div className="glass-panel p-8 rounded-3xl border border-white/[0.08] shadow-2xl space-y-4">
+          {/* Quick Demo Credentials Helper for Hackathon Judges */}
+          <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.08] flex items-center justify-between text-xs">
+            <span className="text-gray-400 font-medium flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-violet-400" />
+              <span>Demo Account:</span>
+            </span>
+            <button
+              type="button"
+              onClick={() => {
+                if (selectedRole === 'artist') {
+                  setEmail('a@gmail.com');
+                  setPassword('123456');
+                } else {
+                  setEmail('b@gmail.com');
+                  setPassword('123456');
+                }
+                setError('');
+              }}
+              className="px-2.5 py-1 rounded-lg bg-violet-600/30 hover:bg-violet-600/50 text-violet-200 border border-violet-500/30 text-[11px] font-semibold transition-all hover:scale-105"
+            >
+              Fill Demo Credentials (123456)
+            </button>
+          </div>
+
           {error && (
-            <div className="mb-4 p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center gap-2">
+            <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs flex items-center gap-2">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{error}</span>
             </div>

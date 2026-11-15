@@ -181,11 +181,11 @@ This concurrently boots:
    - Experience the **Interactive Multimodal Sensory Playground**: toggle Visual, Audio, and Haptic modes.
    - Click **Trigger Vibration** to feel real haptic pulses on compatible devices or see the tactile pulse wave.
 2. **Login as Artist**:
-   - Navigate to `/login` and sign in with the artist account (`a@gmail.com`).
+   - Navigate to `/login` and sign in with the artist demo account (`Email: a@gmail.com` | `Password: 123456`) or click **Fill Demo Credentials**.
    - Open **Artist Control Studio** to view the **5-Track Creative Timeline**.
    - Inspect individual cues, switch between **Literal, Poetic, and Minimal** description styles, lock cultural mudras, and approve AI proposals.
 3. **Experience the Live Audience Portal**:
-   - Click **Publish & Generate QR** or open `/experience/rituranga-spring-dance`.
+   - Click **Publish & Generate QR** or open `/experience/rituranga-spring-dance` (or `/experience/chhath-7872`).
    - Experience the performance through **Visual Mode**, **Audio Mode**, or **Haptic Mode** in real-time.
 
 ---
