@@ -107,12 +107,12 @@ export default function LandingPage() {
       {/* ========================================================
           HERO SECTION
           ======================================================== */}
-      <section className="relative pt-8 sm:pt-16 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="relative pt-14 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Ambient Spotlights */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[380px] bg-violet-600/15 blur-[150px] rounded-full pointer-events-none"></div>
         <div className="absolute top-1/3 left-1/4 w-[380px] h-[300px] bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none"></div>
 
-        <div className="text-center max-w-4xl mx-auto space-y-8 relative z-10">
+        <div className="text-center max-w-4xl mx-auto space-y-10 relative z-10">
           {/* Cinematic H1 */}
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
@@ -131,7 +131,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="flex flex-wrap items-center justify-center gap-4 pt-2"
+            className="flex flex-wrap items-center justify-center gap-4 pt-4"
           >
             <Link
               to="/artist/upload"
@@ -159,7 +159,7 @@ export default function LandingPage() {
           initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45 }}
-          className="mt-14 max-w-5xl mx-auto rounded-3xl glass-panel-elevated border border-white/[0.12] overflow-hidden shadow-2xl relative"
+          className="mt-24 sm:mt-32 max-w-5xl mx-auto rounded-3xl glass-panel-elevated border border-white/[0.12] overflow-hidden shadow-2xl relative"
         >
           {/* Header Bar */}
           <div className="px-6 py-4 border-b border-white/[0.08] flex flex-wrap items-center justify-between gap-4 bg-black/40">
