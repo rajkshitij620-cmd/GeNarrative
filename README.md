@@ -6,9 +6,22 @@
 [![React](https://img.shields.io/badge/Frontend-React%2018%20%2B%20Vite%20%2B%20Tailwind-06b6d4?style=for-the-badge&logo=react)](frontend)
 [![FastAPI](https://img.shields.io/badge/AI%20Engine-FastAPI%20%2B%20Gemini%201.5-10b981?style=for-the-badge&logo=fastapi)](ai-service)
 [![Express](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-8b5cf6?style=for-the-badge&logo=nodedotjs)](backend)
+[![Languages](https://img.shields.io/badge/Languages-22%20Indian%20Official%20%2B%20English-f59e0b?style=for-the-badge)](frontend/src/constants/languages.js)
 
 > **"AI proposes. The artist approves. Everyone experiences the art."**  
 > *Transforming live dance, theatre, music, and spoken word into synchronized Visual, Audio, and Haptic experiences—without ever altering the creator's original work.*
+
+---
+
+## ✨ What's New (Latest Updates)
+
+| Feature | Details |
+|---|---|
+| 🌐 **22 Indian Official Languages + English** | Full Eighth Schedule language support with scrollable dropdown selector on all audience pages |
+| 📸 **Artist Profile Photo** | Upload from gallery or capture via camera; all image formats & sizes accepted |
+| 📏 **Dynamic Video-Length Timeline** | Tactile Patterns, Descriptive Narrations & Subtitle Stream timeline scales to actual video duration |
+| 🔒 **Role-Based Audience Feedback** | Feedback section visible only to Audience users, hidden from Artists |
+| 🎨 **Minimal Landing Page** | Focused hero messaging — clean dark design without distraction |
 
 ---
 
@@ -177,16 +190,33 @@ This concurrently boots:
 
 ## 🧑‍⚖️ Hackathon Judge Walkthrough (3 Minutes)
 
-1. **Open the Homepage (`http://localhost:5173`)**:
+### Demo Credentials
+| Role | Email | Password |
+|---|---|---|
+| 🎨 Artist | `a@gmail.com` | `123456` |
+| 🎧 Audience | `b@gmail.com` | `123456` |
+
+> Click **"Fill Demo Credentials"** on the login page to auto-fill.
+
+### Steps
+
+1. **Open the Homepage (`http://localhost:5173`)**
    - Experience the **Interactive Multimodal Sensory Playground**: toggle Visual, Audio, and Haptic modes.
-   - Click **Trigger Vibration** to feel real haptic pulses on compatible devices or see the tactile pulse wave.
-2. **Login as Artist**:
-   - Navigate to `/login` and sign in with the artist demo account (`Email: a@gmail.com` | `Password: 123456`) or click **Fill Demo Credentials**.
+   - Click **Trigger Vibration** to feel real haptic pulses on compatible devices.
+
+2. **Login as Artist** → `/login`
    - Open **Artist Control Studio** to view the **5-Track Creative Timeline**.
    - Inspect individual cues, switch between **Literal, Poetic, and Minimal** description styles, lock cultural mudras, and approve AI proposals.
-3. **Experience the Live Audience Portal**:
-   - Click **Publish & Generate QR** or open `/experience/rituranga-spring-dance` (or `/experience/chhath-7872`).
+   - Visit **Artist Profile** to upload or capture a profile photo.
+
+3. **Experience the Live Audience Portal**
+   - Click **Publish & Generate QR** or open `/experience/chhath-7872`.
+   - Use the **language dropdown** (top-right) to switch between all 22 Indian official languages + English.
    - Experience the performance through **Visual Mode**, **Audio Mode**, or **Haptic Mode** in real-time.
+   - Each mode shows a **dynamic timeline ruler** that scales to the exact video duration — click any marker to jump to that moment.
+
+4. **Audience Feedback** (login as Audience `b@gmail.com`)
+   - Submit anonymous accessibility ratings — only visible to Audience users.
 
 ---
 
@@ -196,11 +226,12 @@ This concurrently boots:
 GeNarrative/
 ├── frontend/                     # React 18 + Vite frontend
 │   ├── src/
-│   │   ├── components/common/    # Navbar, Footer, ModeBadge
+│   │   ├── components/common/    # Navbar, Footer, ModeBadge, LanguageDropdown
+│   │   ├── constants/            # languages.js (22 Indian official + English)
 │   │   ├── context/              # AuthContext, AccessibilityContext
 │   │   ├── layouts/              # ArtistLayout (Studio Sidebar)
 │   │   ├── pages/                # LandingPage, Login, Register, Features, About
-│   │   │   ├── artist/           # Dashboard, Upload, AIStatus, ArtistControlStudio, Analytics
+│   │   │   ├── artist/           # Dashboard, Upload, AIStatus, ArtistControlStudio, ArtistProfile, Analytics
 │   │   │   └── audience/         # AudienceExperience, VisualMode, AudioMode, HapticMode
 │   │   └── services/             # Axios API integration
 ├── backend/                      # Express.js REST API
