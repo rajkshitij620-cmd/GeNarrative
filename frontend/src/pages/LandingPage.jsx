@@ -356,53 +356,14 @@ export default function LandingPage() {
       </section>
 
       {/* ========================================================
-          METRICS & IMPACT RIBBON
-          ======================================================== */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-6 rounded-2xl glass-panel border border-white/[0.08] text-center space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-gradient-silver">70M+</div>
-            <div className="text-xs font-semibold text-gray-300">Deaf Audiences Empowered</div>
-            <p className="text-[11px] text-gray-500">Live bilingual synchronized captions</p>
-          </div>
-
-          <div className="p-6 rounded-2xl glass-panel border border-white/[0.08] text-center space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-gradient-silver">43M+</div>
-            <div className="text-xs font-semibold text-gray-300">Blind & Low-Vision Patrons</div>
-            <p className="text-[11px] text-gray-500">Spatial descriptive audio narration</p>
-          </div>
-
-          <div className="p-6 rounded-2xl glass-panel border border-white/[0.08] text-center space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-gradient-primary">4 Modes</div>
-            <div className="text-xs font-semibold text-gray-300">One Single Performance</div>
-            <p className="text-[11px] text-gray-500">Visual, Audio, Haptic, & Artist</p>
-          </div>
-
-          <div className="p-6 rounded-2xl glass-panel border border-white/[0.08] text-center space-y-1">
-            <div className="text-3xl sm:text-4xl font-extrabold text-emerald-400">100%</div>
-            <div className="text-xs font-semibold text-gray-300">Artist Creative Mandate</div>
-            <p className="text-[11px] text-gray-500">Zero AI publishing without artist sign-off</p>
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* ========================================================
           CORE PHILOSOPHY & WORKFLOW (4-STEP PIPELINE)
           ======================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-8 sm:p-14 rounded-3xl glass-panel-elevated border border-white/[0.1] relative overflow-hidden space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="text-xs font-mono font-semibold uppercase tracking-wider text-violet-400">
-              The Sovereign Pipeline
-            </span>
+          <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
               How RASA CUE Transforms Live Performances
             </h2>
-            <p className="text-xs text-gray-400 leading-relaxed">
-              Engineered so that AI acts as an assistive drafter, while the creator retains complete veto and editing authority.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
