@@ -199,13 +199,15 @@ export const updateProfile = async (req, res) => {
     if (name) user.name = name;
     if (bio !== undefined) user.bio = bio;
     if (culturalSpecialty !== undefined && user.role === 'artist') user.culturalSpecialty = culturalSpecialty;
-    if (avatar) user.avatar = avatar;
+    if (avatar !== undefined) user.avatar = avatar;
     if (accessibilityPreferences) {
       user.accessibilityPreferences = {
         ...user.accessibilityPreferences,
         ...accessibilityPreferences
       };
     }
+
+    memoryStore.saveToDisk();
 
     const { password, ...safeUser } = user;
     res.json({ success: true, message: 'Profile updated successfully.', user: safeUser });

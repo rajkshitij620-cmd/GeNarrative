@@ -162,10 +162,12 @@ export default function Navbar() {
                       : 'bg-violet-500/10 border-violet-500/30 text-violet-300'
                   }`}
                 >
-                  {isAudience ? (
-                    <Headphones className="w-3.5 h-3.5 text-cyan-400" />
+                  {user.avatar ? (
+                    <img src={user.avatar} alt={user.name} className="w-4 h-4 rounded-full object-cover border border-white/20 shrink-0" />
+                  ) : isAudience ? (
+                    <Headphones className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                   ) : (
-                    <Palette className="w-3.5 h-3.5 text-violet-400" />
+                    <Palette className="w-3.5 h-3.5 text-violet-400 shrink-0" />
                   )}
                   <span className="max-w-[140px] truncate">{user.name}</span>
                 </div>
