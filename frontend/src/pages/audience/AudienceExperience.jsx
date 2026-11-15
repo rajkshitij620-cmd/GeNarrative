@@ -327,87 +327,89 @@ export default function AudienceExperience() {
         </div>
       )}
 
-      {/* AUDIENCE FEEDBACK SECTION (Section 18) */}
-      <div className="glass-panel p-6 rounded-3xl border border-gray-800 space-y-4">
-        <div className="flex items-center justify-between">
-          <h3 className="text-sm font-bold text-white flex items-center gap-2">
-            <MessageSquare className="w-4 h-4 text-primary-400" />
-            <span>Audience Accessibility Feedback</span>
-          </h3>
-          <span className="text-[10px] text-gray-500 font-mono">Anonymous & Instant</span>
-        </div>
-
-        {feedbackSubmitted ? (
-          <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4" />
-            <span>Thank you! Your feedback helps make performing arts universally inclusive.</span>
+      {/* AUDIENCE FEEDBACK SECTION (Visible ONLY to logged-in Audience, never to Artist) */}
+      {user?.role === 'audience' && (
+        <div className="glass-panel p-6 rounded-3xl border border-gray-800 space-y-4">
+          <div className="flex items-center justify-between">
+            <h3 className="text-sm font-bold text-white flex items-center gap-2">
+              <MessageSquare className="w-4 h-4 text-primary-400" />
+              <span>Audience Accessibility Feedback</span>
+            </h3>
+            <span className="text-[10px] text-gray-500 font-mono">Anonymous & Instant</span>
           </div>
-        ) : (
-          <form onSubmit={handleFeedbackSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-              <div>
-                <label className="block text-gray-400 mb-1">Caption Clarity (1-5)</label>
-                <select
-                  value={captionClarity}
-                  onChange={(e) => setCaptionClarity(e.target.value)}
-                  className="w-full p-2 rounded-lg bg-surface border border-gray-700 text-white text-xs"
-                >
-                  <option value={5}>5 - Crystal Clear</option>
-                  <option value={4}>4 - Good</option>
-                  <option value={3}>3 - Acceptable</option>
-                  <option value={2}>2 - Needs refinement</option>
-                </select>
-              </div>
 
-              <div>
-                <label className="block text-gray-400 mb-1">Audio Description (1-5)</label>
-                <select
-                  value={audioQuality}
-                  onChange={(e) => setAudioQuality(e.target.value)}
-                  className="w-full p-2 rounded-lg bg-surface border border-gray-700 text-white text-xs"
-                >
-                  <option value={5}>5 - Excellent Cadence</option>
-                  <option value={4}>4 - Good</option>
-                  <option value={3}>3 - Acceptable</option>
-                  <option value={2}>2 - Needs refinement</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-gray-400 mb-1">Haptic Utility (1-5)</label>
-                <select
-                  value={hapticUtility}
-                  onChange={(e) => setHapticUtility(e.target.value)}
-                  className="w-full p-2 rounded-lg bg-surface border border-gray-700 text-white text-xs"
-                >
-                  <option value={5}>5 - Immersive & Tactile</option>
-                  <option value={4}>4 - Good</option>
-                  <option value={3}>3 - Acceptable</option>
-                  <option value={2}>2 - Not noticeable</option>
-                </select>
-              </div>
+          {feedbackSubmitted ? (
+            <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>Thank you! Your feedback helps make performing arts universally inclusive.</span>
             </div>
+          ) : (
+            <form onSubmit={handleFeedbackSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                <div>
+                  <label className="block text-gray-400 mb-1">Caption Clarity (1-5)</label>
+                  <select
+                    value={captionClarity}
+                    onChange={(e) => setCaptionClarity(e.target.value)}
+                    className="w-full p-2 rounded-lg bg-surface border border-gray-700 text-white text-xs"
+                  >
+                    <option value={5}>5 - Crystal Clear</option>
+                    <option value={4}>4 - Good</option>
+                    <option value={3}>3 - Acceptable</option>
+                    <option value={2}>2 - Needs refinement</option>
+                  </select>
+                </div>
 
-            <div>
-              <label className="block text-xs text-gray-400 mb-1">Comments or Suggestions for the Artist</label>
-              <textarea
-                rows={2}
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-                placeholder="Share your experience with the accessibility cues..."
-                className="w-full p-2.5 rounded-xl bg-surface border border-gray-700 text-xs text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none"
-              />
-            </div>
+                <div>
+                  <label className="block text-gray-400 mb-1">Audio Description (1-5)</label>
+                  <select
+                    value={audioQuality}
+                    onChange={(e) => setAudioQuality(e.target.value)}
+                    className="w-full p-2 rounded-lg bg-surface border border-gray-700 text-white text-xs"
+                  >
+                    <option value={5}>5 - Excellent Cadence</option>
+                    <option value={4}>4 - Good</option>
+                    <option value={3}>3 - Acceptable</option>
+                    <option value={2}>2 - Needs refinement</option>
+                  </select>
+                </div>
 
-            <button
-              type="submit"
-              className="px-5 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-xs font-semibold shadow-md shadow-primary-600/30"
-            >
-              Submit Anonymous Rating
-            </button>
-          </form>
-        )}
-      </div>
+                <div>
+                  <label className="block text-gray-400 mb-1">Haptic Utility (1-5)</label>
+                  <select
+                    value={hapticUtility}
+                    onChange={(e) => setHapticUtility(e.target.value)}
+                    className="w-full p-2 rounded-lg bg-surface border border-gray-700 text-white text-xs"
+                  >
+                    <option value={5}>5 - Immersive & Tactile</option>
+                    <option value={4}>4 - Good</option>
+                    <option value={3}>3 - Acceptable</option>
+                    <option value={2}>2 - Not noticeable</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs text-gray-400 mb-1">Comments or Suggestions for the Artist</label>
+                <textarea
+                  rows={2}
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                  placeholder="Share your experience with the accessibility cues..."
+                  className="w-full p-2.5 rounded-xl bg-surface border border-gray-700 text-xs text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="px-5 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-xs font-semibold shadow-md shadow-primary-600/30"
+              >
+                Submit Anonymous Rating
+              </button>
+            </form>
+          )}
+        </div>
+      )}
     </div>
   );
 }
