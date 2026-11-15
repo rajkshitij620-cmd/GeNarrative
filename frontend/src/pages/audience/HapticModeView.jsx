@@ -34,6 +34,7 @@ export default function HapticModeView() {
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [activePulse, setActivePulse] = useState(null);
+  const [videoDuration, setVideoDuration] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -121,6 +122,7 @@ export default function HapticModeView() {
           src={data?.videoUrl}
           onTimeUpdate={handleTimeUpdate}
           onEnded={() => setIsPlaying(false)}
+          onLoadedMetadata={() => setVideoDuration(videoRef.current?.duration || 0)}
           className="w-full h-full object-contain"
         />
 
@@ -205,31 +207,83 @@ export default function HapticModeView() {
         </div>
       </div>
 
-      {/* Haptic Events Stream */}
+      {/* Haptic Events — Dynamic Timeline */}
       <div className="glass-panel p-5 rounded-2xl border border-gray-800 space-y-3">
-        <h3 className="text-xs font-bold text-white uppercase tracking-wider">
-          Approved Tactile Vibration Patterns
-        </h3>
-        <div className="space-y-2">
-          {data?.hapticCues?.map(cue => (
-            <div
-              key={cue.id}
-              onClick={() => {
-                if (videoRef.current) videoRef.current.currentTime = cue.timestamp;
-                testVibration(cue.pattern);
-              }}
-              className="p-3 rounded-xl bg-surface border border-gray-800 hover:border-amber-500/40 cursor-pointer transition-all flex items-center justify-between"
-            >
-              <div>
-                <div className="text-xs font-semibold text-white">⚡ {cue.label}</div>
-                <div className="text-[10px] text-gray-400 font-mono">
-                  Pattern: [{cue.pattern?.join(', ')}] ms • {cue.patternType}
-                </div>
-              </div>
-              <span className="text-xs font-mono text-amber-400">{cue.timestamp}s</span>
-            </div>
-          ))}
+        <div className="flex items-center justify-between">
+          <h3 className="text-xs font-bold text-white uppercase tracking-wider">
+            Approved Tactile Vibration Patterns
+          </h3>
+          <span className="text-[10px] text-gray-500 font-mono">
+            {videoDuration > 0 ? `${videoDuration.toFixed(0)}s total` : 'Loading...'}
+          </span>
         </div>
+
+        {videoDuration > 0 ? (
+          <div className="overflow-x-auto pb-2">
+            <div
+              className="relative"
+              style={{ width: `${Math.max(videoDuration * 22, 320)}px`, height: '72px' }}
+            >
+              {/* Ruler ticks every 5s */}
+              {Array.from({ length: Math.ceil(videoDuration / 5) + 1 }).map((_, i) => {
+                const sec = i * 5;
+                if (sec > videoDuration) return null;
+                return (
+                  <div
+                    key={i}
+                    className="absolute top-0 bottom-0 flex flex-col"
+                    style={{ left: `${(sec / videoDuration) * 100}%` }}
+                  >
+                    <div className="w-px h-3 bg-white/20" />
+                    <span className="text-[8px] text-gray-600 font-mono ml-0.5 mt-0.5">{sec}s</span>
+                  </div>
+                );
+              })}
+
+              {/* Baseline */}
+              <div className="absolute top-3 left-0 right-0 h-px bg-white/10" />
+
+              {/* Playhead */}
+              <div
+                className="absolute top-0 bottom-0 w-0.5 bg-amber-400 z-20 transition-all"
+                style={{ left: `${(currentTime / videoDuration) * 100}%` }}
+              >
+                <div className="w-2 h-2 rounded-full bg-amber-400 -ml-[3px] -mt-0.5" />
+              </div>
+
+              {/* Haptic cue markers (pins) */}
+              {data?.hapticCues?.map(cue => {
+                const leftPct = (cue.timestamp / videoDuration) * 100;
+                const isActive = Math.abs(currentTime - cue.timestamp) < (cue.durationMs / 1000 || 0.5);
+                return (
+                  <div
+                    key={cue.id}
+                    onClick={() => {
+                      if (videoRef.current) videoRef.current.currentTime = cue.timestamp;
+                      testVibration(cue.pattern);
+                    }}
+                    title={`${cue.timestamp}s • ${cue.label} • [${cue.pattern?.join(', ')}]ms`}
+                    className="absolute top-5 cursor-pointer z-10 flex flex-col items-center"
+                    style={{ left: `${leftPct}%`, transform: 'translateX(-50%)' }}
+                  >
+                    <div className={`w-3 h-3 rounded-full border-2 transition-all ${
+                      isActive
+                        ? 'bg-amber-400 border-amber-300 scale-150'
+                        : 'bg-amber-700 border-amber-500 hover:bg-amber-500'
+                    }`} />
+                    <span className={`text-[8px] font-mono mt-1 whitespace-nowrap ${
+                      isActive ? 'text-amber-300' : 'text-gray-500'
+                    }`}>
+                      ⚡{cue.timestamp}s
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <p className="text-[11px] text-gray-500 font-mono">Play the video to load timeline…</p>
+        )}
       </div>
     </div>
   );

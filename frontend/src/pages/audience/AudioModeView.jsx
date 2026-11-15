@@ -35,6 +35,7 @@ export default function AudioModeView() {
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [lastNarration, setLastNarration] = useState('Descriptive voiceover will play at choreographic moments.');
+  const [videoDuration, setVideoDuration] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -132,6 +133,7 @@ export default function AudioModeView() {
           src={data?.videoUrl}
           onTimeUpdate={handleTimeUpdate}
           onEnded={() => setIsPlaying(false)}
+          onLoadedMetadata={() => setVideoDuration(videoRef.current?.duration || 0)}
           className="w-full h-full object-contain"
         />
 
@@ -194,33 +196,85 @@ export default function AudioModeView() {
         </div>
       </div>
 
-      {/* Narration Cues Timeline */}
+      {/* Narration Cues — Dynamic Timeline */}
       <div className="glass-panel p-5 rounded-2xl border border-gray-800 space-y-3">
-        <h3 className="text-xs font-bold text-white uppercase tracking-wider">
-          Approved Descriptive Narrations
-        </h3>
-        <div className="space-y-2">
-          {data?.accessibilityDescriptions?.map(desc => (
-            <div
-              key={desc.id}
-              onClick={() => {
-                if (videoRef.current) {
-                  videoRef.current.currentTime = desc.timestamp;
-                  spokenTracker.current[desc.id] = false;
-                }
-              }}
-              className="p-3 rounded-xl bg-surface border border-gray-800 hover:border-emerald-500/40 cursor-pointer transition-all space-y-1"
-            >
-              <div className="flex items-center justify-between text-[10px] font-mono text-emerald-400">
-                <span>At {desc.timestamp}s ({desc.style} style)</span>
-                <span className="text-gray-500">Duration: ~{desc.duration || 3.5}s</span>
-              </div>
-              <p className="text-xs text-gray-200">
-                {desc.text?.[language] || desc.text?.english}
-              </p>
-            </div>
-          ))}
+        <div className="flex items-center justify-between">
+          <h3 className="text-xs font-bold text-white uppercase tracking-wider">
+            Approved Descriptive Narrations
+          </h3>
+          <span className="text-[10px] text-gray-500 font-mono">
+            {videoDuration > 0 ? `${videoDuration.toFixed(0)}s total` : 'Loading...'}
+          </span>
         </div>
+
+        {videoDuration > 0 ? (
+          <div className="overflow-x-auto pb-2">
+            <div
+              className="relative"
+              style={{ width: `${Math.max(videoDuration * 22, 320)}px`, height: '72px' }}
+            >
+              {/* Ruler ticks every 5s */}
+              {Array.from({ length: Math.ceil(videoDuration / 5) + 1 }).map((_, i) => {
+                const sec = i * 5;
+                if (sec > videoDuration) return null;
+                return (
+                  <div
+                    key={i}
+                    className="absolute top-0 bottom-0 flex flex-col"
+                    style={{ left: `${(sec / videoDuration) * 100}%` }}
+                  >
+                    <div className="w-px h-3 bg-white/20" />
+                    <span className="text-[8px] text-gray-600 font-mono ml-0.5 mt-0.5">{sec}s</span>
+                  </div>
+                );
+              })}
+
+              {/* Baseline */}
+              <div className="absolute top-3 left-0 right-0 h-px bg-white/10" />
+
+              {/* Playhead */}
+              <div
+                className="absolute top-0 bottom-0 w-0.5 bg-emerald-400 z-20 transition-all"
+                style={{ left: `${(currentTime / videoDuration) * 100}%` }}
+              >
+                <div className="w-2 h-2 rounded-full bg-emerald-400 -ml-[3px] -mt-0.5" />
+              </div>
+
+              {/* Narration blocks */}
+              {data?.accessibilityDescriptions?.map(desc => {
+                const leftPct = (desc.timestamp / videoDuration) * 100;
+                const widthPct = ((desc.duration || 4) / videoDuration) * 100;
+                const isActive = Math.abs(currentTime - desc.timestamp) < (desc.duration || 4);
+                return (
+                  <div
+                    key={desc.id}
+                    onClick={() => {
+                      if (videoRef.current) {
+                        videoRef.current.currentTime = desc.timestamp;
+                        spokenTracker.current[desc.id] = false;
+                      }
+                    }}
+                    title={`${desc.timestamp}s • ${desc.style} • ${desc.text?.english || ''}`}
+                    className={`absolute top-5 h-8 rounded px-1.5 text-[9px] font-mono cursor-pointer border truncate flex items-center transition-all ${
+                      isActive
+                        ? 'bg-emerald-700 border-emerald-400 text-white z-10'
+                        : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-emerald-500 hover:text-white'
+                    }`}
+                    style={{
+                      left: `${leftPct}%`,
+                      width: `${widthPct}%`,
+                      minWidth: '40px'
+                    }}
+                  >
+                    {desc.style || ''}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <p className="text-[11px] text-gray-500 font-mono">Play the video to load timeline…</p>
+        )}
       </div>
     </div>
   );

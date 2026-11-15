@@ -15,6 +15,7 @@ export default function VisualModeView() {
   const [loading, setLoading] = useState(true);
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [videoDuration, setVideoDuration] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -126,6 +127,7 @@ export default function VisualModeView() {
           src={data?.videoUrl}
           onTimeUpdate={handleTimeUpdate}
           onEnded={() => setIsPlaying(false)}
+          onLoadedMetadata={() => setVideoDuration(videoRef.current?.duration || 0)}
           className="w-full h-full object-contain"
         />
 
@@ -170,32 +172,80 @@ export default function VisualModeView() {
         </span>
       </div>
 
-      {/* Live Transcript Stream */}
+      {/* Complete Synchronized Subtitle Stream — Dynamic Timeline */}
       <div className="glass-panel p-5 rounded-2xl border border-gray-800 space-y-3">
-        <h3 className="text-xs font-bold text-white uppercase tracking-wider">
-          Complete Synchronized Subtitle Stream
-        </h3>
-        <div className="space-y-2">
-          {data?.captions?.map(c => (
-            <div
-              key={c.id}
-              onClick={() => {
-                if (videoRef.current) videoRef.current.currentTime = c.startTime;
-              }}
-              className={`p-3 rounded-xl border text-xs cursor-pointer transition-all ${
-                currentTime >= c.startTime && currentTime <= c.endTime
-                  ? 'border-cyan-500 bg-cyan-950/30 text-cyan-200 font-semibold'
-                  : 'border-gray-800 bg-surface/50 text-gray-400 hover:bg-surface'
-              }`}
-            >
-              <div className="flex items-center justify-between text-[10px] text-gray-500 font-mono mb-1">
-                <span>{c.speaker}</span>
-                <span>{c.startTime}s - {c.endTime}s</span>
-              </div>
-              <div>{c.text?.[language] || c.text?.english}</div>
-            </div>
-          ))}
+        <div className="flex items-center justify-between">
+          <h3 className="text-xs font-bold text-white uppercase tracking-wider">
+            Complete Synchronized Subtitle Stream
+          </h3>
+          <span className="text-[10px] text-gray-500 font-mono">
+            {videoDuration > 0 ? `${videoDuration.toFixed(0)}s total` : 'Loading...'}
+          </span>
         </div>
+
+        {videoDuration > 0 ? (
+          <div className="overflow-x-auto pb-2">
+            <div
+              className="relative"
+              style={{ width: `${Math.max(videoDuration * 22, 320)}px`, height: '72px' }}
+            >
+              {/* Ruler tick marks */}
+              {Array.from({ length: Math.ceil(videoDuration / 5) + 1 }).map((_, i) => {
+                const sec = i * 5;
+                if (sec > videoDuration) return null;
+                return (
+                  <div
+                    key={i}
+                    className="absolute top-0 bottom-0 flex flex-col"
+                    style={{ left: `${(sec / videoDuration) * 100}%` }}
+                  >
+                    <div className="w-px h-3 bg-white/20" />
+                    <span className="text-[8px] text-gray-600 font-mono ml-0.5 mt-0.5">{sec}s</span>
+                  </div>
+                );
+              })}
+
+              {/* Thin baseline */}
+              <div className="absolute top-3 left-0 right-0 h-px bg-white/10" />
+
+              {/* Moving playhead */}
+              <div
+                className="absolute top-0 bottom-0 w-0.5 bg-cyan-400 z-20 transition-all"
+                style={{ left: `${(currentTime / videoDuration) * 100}%` }}
+              >
+                <div className="w-2 h-2 rounded-full bg-cyan-400 -ml-[3px] -mt-0.5" />
+              </div>
+
+              {/* Caption blocks */}
+              {data?.captions?.map(c => {
+                const leftPct = (c.startTime / videoDuration) * 100;
+                const widthPct = ((c.endTime - c.startTime) / videoDuration) * 100;
+                const isActive = currentTime >= c.startTime && currentTime <= c.endTime;
+                return (
+                  <div
+                    key={c.id}
+                    onClick={() => { if (videoRef.current) videoRef.current.currentTime = c.startTime; }}
+                    title={`${c.startTime}s–${c.endTime}s • ${c.speaker}: ${c.text?.english || ''}`}
+                    className={`absolute top-5 h-8 rounded px-1.5 text-[9px] font-mono cursor-pointer border truncate flex items-center transition-all ${
+                      isActive
+                        ? 'bg-cyan-600 border-cyan-400 text-white z-10'
+                        : 'bg-gray-800 border-gray-700 text-gray-400 hover:border-cyan-500 hover:text-white'
+                    }`}
+                    style={{
+                      left: `${leftPct}%`,
+                      width: `${widthPct}%`,
+                      minWidth: '36px'
+                    }}
+                  >
+                    {c.speaker || c.text?.english?.substring(0, 10)}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <p className="text-[11px] text-gray-500 font-mono">Play the video to load timeline…</p>
+        )}
       </div>
     </div>
   );
