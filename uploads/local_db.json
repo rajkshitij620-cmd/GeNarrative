@@ -1,0 +1,414 @@
+{
+  "users": [
+    {
+      "_id": "user_1794723614231_wi0a3",
+      "createdAt": "2026-11-15T09:19:40.577Z",
+      "name": "jhv jhkjesc",
+      "email": "a@gmail.com",
+      "role": "artist",
+      "password": "$2a$10$FnR8CSR15VRsZ30XUa7.n.VKJgZt3mHqlIGsytZwiuBg7NiJYomES",
+      "bio": "Performance artist",
+      "culturalSpecialty": "Classical & Contemporary Arts",
+      "accessibilityPreferences": {
+        "preferredLanguage": "English",
+        "defaultMode": "visual"
+      }
+    },
+    {
+      "_id": "user_1794736829456_ssnnt",
+      "createdAt": "2026-11-15T10:00:29.456Z",
+      "name": "dkjvb",
+      "email": "b@gmail.com",
+      "password": "$2a$10$Xx6edJ/SW.oyRWOLt/LiL.xlhrqr1kfKLI.f9jbiphzE4cx0k0VN6",
+      "role": "audience",
+      "bio": "Art enthusiast & audience member",
+      "culturalSpecialty": "",
+      "accessibilityPreferences": {
+        "preferredLanguage": "Hindi",
+        "defaultMode": "audio",
+        "highContrast": false,
+        "hapticIntensity": 1,
+        "fontSize": "normal"
+      },
+      "savedPerformances": [],
+      "viewingHistory": [],
+      "avatar": ""
+    }
+  ],
+  "performances": [
+    {
+      "_id": "perf_1794734407907_n89lx",
+      "createdAt": "2026-11-15T09:20:07.907Z",
+      "updatedAt": "2026-11-15T09:55:05.492Z",
+      "artistId": "user_1794723614231_wi0a3",
+      "artistName": "jhv jhkjesc",
+      "title": "chhath",
+      "slug": "chhath-7872",
+      "description": "Multimodal performance with synchronized accessibility layers.",
+      "category": "Dance",
+      "originalLanguage": "Bengali",
+      "supportedLanguages": [
+        "Bengali",
+        "Hindi",
+        "English"
+      ],
+      "videoUrl": "/uploads/1794734407856-312783386.mp4",
+      "thumbnailUrl": "",
+      "duration": 17.9,
+      "tags": [
+        "video"
+      ],
+      "status": "published",
+      "processingProgress": 100,
+      "processingError": null,
+      "isPublished": true,
+      "protectedElements": [
+        {
+          "category": "Cultural Meaning",
+          "description": "Preserve authentic mudra interpretation and rhythmic footwork without AI deviation.",
+          "timestamp": 5
+        }
+      ],
+      "qrCodeDataUrl": "data:image/png;base64,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",
+      "publishedAt": "2026-11-15T09:55:05.492Z"
+    }
+  ],
+  "timelines": [
+    {
+      "_id": "tl_1794734407907_icir7",
+      "performanceId": "perf_1794734407907_n89lx",
+      "version": 2,
+      "captions": [
+        {
+          "id": "cap_ai_1",
+          "startTime": 2,
+          "endTime": 8.5,
+          "speaker": "Narrator / Singer",
+          "text": {
+            "bengali": "আকাশে বাতাসে নবীন সুর, ঋতুর রঙে মেতেছে ধরণী।",
+            "hindi": "आकाश और हवाओं में नया राग गूंज रहा है, धरती रंगों में लीन है।",
+            "english": "A new melody resonates in the winds; the earth awakens in the colors of the season."
+          },
+          "status": "artist_approved"
+        },
+        {
+          "id": "cap_ai_2",
+          "startTime": 18,
+          "endTime": 26,
+          "speaker": "Bol Recitation",
+          "text": {
+            "bengali": "ধা ধিন ধিন ধা | তা তিন তিন তা | তেটে কতা গদি ঘেনে ধা!",
+            "hindi": "धा धिन धिन धा | ता तिन तिन ता | तेटे कता गदि घेने धा!",
+            "english": "Dha Dhin Dhin Dha | Ta Tin Tin Ta | Tete Kata Gadi Ghene Dha!"
+          },
+          "status": "artist_approved"
+        },
+        {
+          "id": "cap_ai_3",
+          "startTime": 38,
+          "endTime": 46.5,
+          "speaker": "Chorus",
+          "text": {
+            "bengali": "ঘূর্ণির তালে ঘুঙুরের বোল বাজে আনন্দধারায়।",
+            "hindi": "चक्कर की थाप पर घुंघरुओं का स्वर आनंद की धारा बहाता है।",
+            "english": "In the spin of the rhythm, ankle bells echo with joyous radiance."
+          },
+          "status": "artist_approved"
+        },
+        {
+          "id": "cap_ai_4",
+          "startTime": 52,
+          "endTime": 59.5,
+          "speaker": "Final Salutation",
+          "text": {
+            "bengali": "প্রণাম জানাই প্রকৃতি ও দর্শকবৃন্দকে। সমাপনী সম।",
+            "hindi": "प्रकृति और दर्शकों को सादर प्रणाम। सम पर समर्पण।",
+            "english": "Salutations to nature and the audience. Returning in harmony to the Sam."
+          },
+          "status": "artist_approved"
+        }
+      ],
+      "movementEvents": [
+        {
+          "id": "mov_ai_1",
+          "timestamp": 3.5,
+          "duration": 4,
+          "poseName": "Aramandi Opening Stance",
+          "description": "The dancer establishes a centered low stance, gently lifting palms upward in Samputa mudra, symbolizing the opening of blossoms.",
+          "bodyRegion": "full_body",
+          "style": "poetic",
+          "confidence": 0.94,
+          "status": "artist_approved"
+        },
+        {
+          "id": "mov_ai_2",
+          "timestamp": 12,
+          "duration": 3.5,
+          "poseName": "Pataka & Mayura Mudra Sequence",
+          "description": "The dancer alternates hands between Pataka and Mayura mudras, tracing the graceful flight of birds across an imaginary horizon.",
+          "bodyRegion": "mudra",
+          "style": "literal",
+          "confidence": 0.96,
+          "status": "artist_approved"
+        },
+        {
+          "id": "mov_ai_3",
+          "timestamp": 24,
+          "duration": 5,
+          "poseName": "Tatkar Footwork Acceleration",
+          "description": "Rhythmic, crisp stamping of bare feet striking the stage floor in sync with the accelerating Teental rhythm.",
+          "bodyRegion": "footwork",
+          "style": "literal",
+          "confidence": 0.91,
+          "status": "artist_approved"
+        },
+        {
+          "id": "mov_ai_4",
+          "timestamp": 38,
+          "duration": 4.5,
+          "poseName": "Triple Chakkars (Kathak Pirouettes)",
+          "description": "Three rapid, seamless 360-degree spins with arms extended horizontally, the flowing costume flaring into a circle of saffron fabric.",
+          "bodyRegion": "full_body",
+          "style": "poetic",
+          "confidence": 0.98,
+          "status": "artist_approved"
+        },
+        {
+          "id": "mov_ai_5",
+          "timestamp": 54,
+          "duration": 5,
+          "poseName": "Namaskar Stance at Sam",
+          "description": "The performer converges to center stage, folding hands at chest level into an Anjali mudra with a serene, humbled expression.",
+          "bodyRegion": "torso",
+          "style": "minimal",
+          "confidence": 0.95,
+          "status": "artist_approved"
+        }
+      ],
+      "sceneEvents": [
+        {
+          "id": "scn_ai_1",
+          "timestamp": 0.5,
+          "lightingCue": "Amber backlighting fades up gently",
+          "spatialFocus": "center_stage",
+          "description": "Warm amber spotlights illuminate the performer in silhouette before revealing intricate gold embroidery on the costume.",
+          "status": "artist_approved"
+        },
+        {
+          "id": "scn_ai_2",
+          "timestamp": 22,
+          "lightingCue": "Side wash switches to vibrant cobalt blue",
+          "spatialFocus": "diagonal_right",
+          "description": "Dynamic diagonal lighting heightens the dramatic shadow interplay as footwork gains velocity.",
+          "status": "artist_approved"
+        },
+        {
+          "id": "scn_ai_3",
+          "timestamp": 50,
+          "lightingCue": "Golden central spotlight with soft vignette",
+          "spatialFocus": "center_stage",
+          "description": "Surrounding stage darkens into a focused golden pool of light framing the dancer’s final salutation.",
+          "status": "artist_approved"
+        }
+      ],
+      "soundEvents": [
+        {
+          "id": "snd_ai_1",
+          "timestamp": 1,
+          "instrumentOrCue": "Tanpura Drone & Bamboo Flute Alaap",
+          "intensity": "soft",
+          "description": "Atmospheric resonant drone with gentle melodic ornamentation establishing the spring morning mood.",
+          "status": "artist_approved"
+        },
+        {
+          "id": "snd_ai_2",
+          "timestamp": 16.5,
+          "instrumentOrCue": "Tabla Entry (Teental)",
+          "intensity": "moderate",
+          "description": "Clear, resonant Bayan and Dayan strokes marking a 16-beat cycle with grounded rhythmic cadence.",
+          "status": "artist_approved"
+        },
+        {
+          "id": "snd_ai_3",
+          "timestamp": 35,
+          "instrumentOrCue": "Accelerating Ghungroo Bells",
+          "intensity": "crescendo",
+          "description": "Intense rhythmic metallic chimes from hundreds of brass ankle bells building toward the climactic spin.",
+          "status": "artist_approved"
+        },
+        {
+          "id": "snd_ai_4",
+          "timestamp": 48,
+          "instrumentOrCue": "Climactic Tihai Stroke",
+          "intensity": "abrupt",
+          "description": "Crisp synchronous strike of tabla and footwork resolving on the primary beat (Sam), followed by silence.",
+          "status": "artist_approved"
+        }
+      ],
+      "hapticCues": [
+        {
+          "id": "hap_ai_1",
+          "timestamp": 2,
+          "durationMs": 150,
+          "intensity": 40,
+          "pattern": [
+            150
+          ],
+          "patternType": "subtle",
+          "label": "Opening Flute Breath",
+          "associatedEventId": "snd_ai_1",
+          "status": "artist_approved"
+        },
+        {
+          "id": "hap_ai_2",
+          "timestamp": 16.5,
+          "durationMs": 250,
+          "intensity": 70,
+          "pattern": [
+            200,
+            80,
+            120
+          ],
+          "patternType": "rhythm",
+          "label": "Tabla Theka Beat 1 (Sam)",
+          "associatedEventId": "snd_ai_2",
+          "status": "artist_approved"
+        },
+        {
+          "id": "hap_ai_3",
+          "timestamp": 24.5,
+          "durationMs": 400,
+          "intensity": 85,
+          "pattern": [
+            100,
+            50,
+            100,
+            50,
+            100
+          ],
+          "patternType": "heartbeat",
+          "label": "Rapid Tatkar Foot Stamping",
+          "associatedEventId": "mov_ai_3",
+          "status": "artist_approved"
+        },
+        {
+          "id": "hap_ai_4",
+          "timestamp": 38,
+          "durationMs": 650,
+          "intensity": 95,
+          "pattern": [
+            120,
+            40,
+            140,
+            40,
+            180,
+            40,
+            250
+          ],
+          "patternType": "crescendo",
+          "label": "Triple Chakkars Whirlwind",
+          "associatedEventId": "mov_ai_4",
+          "status": "artist_approved"
+        },
+        {
+          "id": "hap_ai_5",
+          "timestamp": 48,
+          "durationMs": 300,
+          "intensity": 100,
+          "pattern": [
+            300
+          ],
+          "patternType": "pulse",
+          "label": "Final Tihai Resolution",
+          "associatedEventId": "snd_ai_4",
+          "status": "artist_approved"
+        }
+      ],
+      "accessibilityDescriptions": [
+        {
+          "id": "desc_ai_1",
+          "timestamp": 3,
+          "duration": 5,
+          "style": "poetic",
+          "text": {
+            "english": "In sacred stillness, the dancer stands centered, cupping dawn’s golden light in a devotional Samputa mudra. As the flute's breath mingles with the swelling pulse of Teental, the feet awaken the earth with accelerating Tatkar. Ghungroos cascade like a river of bells, sweeping into triple chakkars that dissolve the body into a radiant whirlwind of prayer.",
+            "bengali": "পবিত্র নিস্তব্ধতায় স্থির দাঁড়িয়ে নৃত্যশিল্পী; সম্পুট মুদ্রায় ধরা অঞ্জলি যেন ভোরের প্রথম কিরণকে নিবেদন করছে। বাঁশির সুর আর তিনতালের ছন্দে দ্রুতগামী তৎকারের পদধ্বনি ধরিত্রীকে জাগিয়ে তোলে; ঘুঙুরের ক্রমশঃ চড়ে যাওয়া নিক্বণ তিন পাকের ঘূর্ণনে এক অপূর্ব আলোকময় ভক্তিতে বিলীন হয়ে যায়।",
+            "hindi": "परम शांति के केंद्र में स्थित नर्तक, सम्पुट मुद्रा में बंधी अंजलि से मानो प्रभात की स्वर्णिम किरणों का अर्घ्य दे रहे हैं। बांसुरी के आलाप और तीनताल के सम्मिश्रण से तत्कार के कदमों में गति भरती है; घुंघरुओं की तीव्र होती झंकार तीन द्रुत चक्करों में बदलकर नर्तक को प्रकाश और प्रार्थना के एक दिव्य भंवर में लीन कर देती है।"
+          },
+          "status": "artist_approved"
+        },
+        {
+          "id": "desc_ai_2",
+          "timestamp": 24,
+          "duration": 4.5,
+          "style": "literal",
+          "text": {
+            "bengali": "নূপুরের দ্রুত ঝংকারে তবলা ও পদাবলীর নিপুণ সমন্বয় ঘটছে।",
+            "hindi": "पैरों के तीव्र थाप पर घुंघरू और तबले का तीव्र सामंजस्य हो रहा है।",
+            "english": "Crisp rhythmic footwork creates a rapid unison between ankle bells and percussion."
+          },
+          "status": "artist_approved"
+        },
+        {
+          "id": "desc_ai_3",
+          "timestamp": 38,
+          "duration": 5.5,
+          "style": "poetic",
+          "text": {
+            "bengali": "তিনটি অবিরাম ঘূর্ণন; গেরুয়া বসন বাতাসে বৃত্তাকার মেঘের মতো ভেসে উঠছে।",
+            "hindi": "तीन तीव्र चक्कर; केसरिया पोशाक हवा में लहराते हुए गोलाकार छटा बिखेरती है।",
+            "english": "Three continuous pirouettes whirl seamlessly; the saffron dress billows into a glowing circle."
+          },
+          "status": "artist_approved"
+        },
+        {
+          "id": "desc_ai_4",
+          "timestamp": 54,
+          "duration": 4.5,
+          "style": "minimal",
+          "text": {
+            "bengali": "মঞ্চের কেন্দ্রে স্থির হয়ে বিনম্র অঞ্জলি মুদ্রায় প্রণাম।",
+            "hindi": "मंच के केंद्र में स्थिर होकर अंजलि मुद्रा में शांत नमस्कार।",
+            "english": "Center stage stillness, bowing serenely in Anjali mudra."
+          },
+          "status": "artist_approved"
+        }
+      ],
+      "isApproved": true,
+      "updatedAt": "2026-11-15T09:20:40.925Z",
+      "approvedAt": "2026-11-15T09:47:36.582Z"
+    },
+    {
+      "_id": "tl_1794736468054_hcqux",
+      "performanceId": "67362a1b9f1d2c3e4a5b6c81",
+      "version": 1,
+      "captions": [],
+      "movementEvents": [],
+      "sceneEvents": [],
+      "soundEvents": [],
+      "hapticCues": [],
+      "accessibilityDescriptions": [],
+      "isApproved": false,
+      "updatedAt": "2026-11-15T09:54:28.054Z"
+    }
+  ],
+  "analytics": [
+    {
+      "_id": "ana_1794736457997",
+      "performanceId": "perf_1794734407907_n89lx",
+      "slug": "chhath-7872",
+      "totalViews": 9,
+      "qrScans": 0,
+      "visualModeUses": 6,
+      "audioModeUses": 2,
+      "hapticModeUses": 2,
+      "languageSelections": {
+        "bengali": 0,
+        "hindi": 2,
+        "english": 6
+      },
+      "lastAccessed": "2026-11-15T09:56:59.255Z"
+    }
+  ],
+  "feedbacks": []
+}
