@@ -1,13 +1,6 @@
 # 🎭 RASA CUE – Multimodal Performance Accessibility Platform
 ### *AI-Powered Accessibility with an Artist Sovereign Control Layer*
 
-[![Hackathon Project](https://img.shields.io/badge/Hackathon-Google%20AI%20Challenge%202026-6366f1?style=for-the-badge&logo=google)](https://github.com/rajkshitij620-cmd/GeNarrative)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
-[![React](https://img.shields.io/badge/Frontend-React%2018%20%2B%20Vite%20%2B%20Tailwind-06b6d4?style=for-the-badge&logo=react)](frontend)
-[![FastAPI](https://img.shields.io/badge/AI%20Engine-FastAPI%20%2B%20Gemini%201.5-10b981?style=for-the-badge&logo=fastapi)](ai-service)
-[![Express](https://img.shields.io/badge/Backend-Node.js%20%2B%20Express-8b5cf6?style=for-the-badge&logo=nodedotjs)](backend)
-[![Languages](https://img.shields.io/badge/Languages-22%20Indian%20Official%20%2B%20English-f59e0b?style=for-the-badge)](frontend/src/constants/languages.js)
-
 > **"AI proposes. The artist approves. Everyone experiences the art."**  
 > *Transforming live dance, theatre, music, and spoken word into synchronized Visual, Audio, and Haptic experiences—without ever altering the creator's original work.*
 
